@@ -1,3 +1,3 @@
-import Benefits from "./benefits";
+import Benefits from './Benefits'
 
-export { Benefits };
+export { Benefits }

@@ -1,3 +1,3 @@
-import Suggestions from "./suggestions";
+import Suggestions from './Suggestions'
 
-export { Suggestions };
+export { Suggestions }

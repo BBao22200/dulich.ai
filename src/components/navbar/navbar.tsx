@@ -46,11 +46,14 @@ const Navbar = () => {
           >
             <Image src='/logo.png' alt='logo' height={80} width={80} />
             <span className='text-xl uppercase font-medium italic'>
-              <span className={ArchitectsDaughter.className}>ARKLYTE</span>
+              <span className={ArchitectsDaughter.className}>DULICH.AI</span>
             </span>
           </div>
         </NavbarBrand>
-        <NavbarContent className='hidden sm:flex gap-4' justify='center'>
+        <NavbarContent
+          className='hidden sm:flex gap-4 font-bold'
+          justify='center'
+        >
           <NavbarItem isActive>
             <Link
               href='/'
@@ -59,7 +62,7 @@ const Navbar = () => {
                 pathname === '/' ? 'text-danger-500' : 'text-black'
               }`}
             >
-              Tours
+              Trang chủ
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -69,7 +72,7 @@ const Navbar = () => {
                 pathname.includes('flights') ? 'text-danger-500' : 'text-black'
               }`}
             >
-              Flights
+              Tạo lịch trình
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -79,7 +82,7 @@ const Navbar = () => {
                 pathname.includes('hotels') ? 'text-danger-500' : 'text-black'
               }`}
             >
-              Hotels
+              Hoạt động & Vui chơi
             </Link>
           </NavbarItem>
         </NavbarContent>

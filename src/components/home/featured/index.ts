@@ -1,3 +1,3 @@
-import Featured from "./featured";
+import Featured from './Featured'
 
-export { Featured };
+export { Featured }

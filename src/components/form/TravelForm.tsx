@@ -39,7 +39,7 @@ const TravelForm: React.FC<TravelFormProps> = ({ onSubmit }) => {
           label='Điểm đi'
           placeholder='Nhập điểm xuất phát'
           variant='bordered'
-          color='secondary'
+          color='danger'
           startContent={<FaMapMarkerAlt />}
           value={origin}
           onChange={(e) => setOrigin(e.target.value)}
@@ -84,7 +84,7 @@ const TravelForm: React.FC<TravelFormProps> = ({ onSubmit }) => {
             size='lg'
             className='w-full'
           >
-            Search Flights
+            Lập kế hoạch với AI
           </Button>
         </div>
       </form>
