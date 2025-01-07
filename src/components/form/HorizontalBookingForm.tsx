@@ -9,8 +9,8 @@ import {
 
 const HorizontalBookingForm = () => {
   const [location, setLocation] = useState('Humboldt Park, Chicago, IL')
-  const [dates, setDates] = useState('')
-  const [guests, setGuests] = useState('')
+  const [dates] = useState('')
+  const [guests] = useState('')
   const [showLocationDropdown, setShowLocationDropdown] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const buttonRef = useRef<HTMLDivElement>(null)
