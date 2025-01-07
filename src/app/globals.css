@@ -7,7 +7,7 @@
   background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type='date']::-webkit-calendar-picker-indicator {
   background: transparent;
   bottom: 0;
   color: transparent;
@@ -22,4 +22,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+header {
+  max-width: 100% !important;
 }

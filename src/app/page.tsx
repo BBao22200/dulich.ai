@@ -1,21 +1,21 @@
-"use client";
+'use client'
 
-import { Benefits } from "@/components/home/benefits";
-import { Featured } from "@/components/home/featured";
-import { Search } from "@/components/home/search";
-import { Suggestions } from "@/components/home/suggestions";
+import { Benefits } from '@/components/home/benefits'
+import { Search } from '@/components/home/search'
+import { SimCard } from '@/components/home/sim-card'
+import { Suggestions } from '@/components/home/suggestions'
 
-import React from "react";
+import React from 'react'
 
 const Home = () => {
   return (
-    <div className="max-w-[100vw] overflow-x-hidden">
+    <div className='max-w-[100vw] overflow-x-hidden'>
       <Search />
-      <Featured />
       <Benefits />
+      <SimCard />
       <Suggestions />
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

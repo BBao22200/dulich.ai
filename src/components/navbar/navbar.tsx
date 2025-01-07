@@ -7,9 +7,10 @@ import {
   NavbarItem,
   Link,
 } from '@nextui-org/react'
-import { Architects_Daughter } from 'next/font/google'
-import Image from 'next/image'
 import { usePathname, useRouter } from 'next/navigation'
+import { Architects_Daughter } from 'next/font/google'
+
+import Image from 'next/image'
 
 const ArchitectsDaughter = Architects_Daughter({
   weight: '400',
@@ -20,73 +21,49 @@ const ArchitectsDaughter = Architects_Daughter({
 const Navbar = () => {
   const router = useRouter()
   const pathname = usePathname()
-  const routesWithImages = ['/', '/search-flights', '/search-hotels']
   return (
-    <NextNavbar isBordered className='min-h-[10vh] relative bg-white'>
-      {!routesWithImages.includes(pathname) && (
-        <>
-          <div className='fixed left-0 top-0 h-[10vh] w-[100vw] overflow-hidden z-0'>
-            <div className='h-[70vh] w-[100vw] absolute z-10 top-0 left-0'>
-              <Image
-                src='/home/home-bg.png'
-                layout='fill'
-                objectFit='cover'
-                alt='Search'
-              />
-            </div>
-          </div>
-          <div className='fixed left-0 top-0 h-[10vh] w-[100vw] overflow-hidden z-0'></div>
-        </>
-      )}
-      <div className='z-10 w-full flex items-center'>
-        <NavbarBrand>
-          <div
-            className='cursor-pointer flex items-center'
-            onClick={() => router.push('/')}
+    <NextNavbar
+      isBordered
+      className='min-h-[10vh] relative bg-white px-10 md:px-56'
+    >
+      <NavbarBrand className='flex items-center gap-3'>
+        <Image src={'/logo.png'} alt='airline name' width={50} height={50} />
+        <p onClick={() => router.push('/')} className='text-3xl font-medium'>
+          <span className={ArchitectsDaughter.className}>dulich.AI</span>
+        </p>
+      </NavbarBrand>
+      <NavbarContent className='hidden sm:flex gap-11 font-bold' justify='end'>
+        <NavbarItem isActive>
+          <Link
+            href='/'
+            aria-current='page'
+            className={`${pathname === '/' ? 'text-danger-500' : 'text-black'}`}
           >
-            <Image src='/logo.png' alt='logo' height={80} width={80} />
-            <span className='text-xl uppercase font-medium italic'>
-              <span className={ArchitectsDaughter.className}>DULICH.AI</span>
-            </span>
-          </div>
-        </NavbarBrand>
-        <NavbarContent
-          className='hidden sm:flex gap-4 font-bold'
-          justify='center'
-        >
-          <NavbarItem isActive>
-            <Link
-              href='/'
-              aria-current='page'
-              className={`${
-                pathname === '/' ? 'text-danger-500' : 'text-black'
-              }`}
-            >
-              Trang chủ
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              href='/search-flights'
-              className={`${
-                pathname.includes('flights') ? 'text-danger-500' : 'text-black'
-              }`}
-            >
-              Tạo lịch trình
-            </Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link
-              href='/search-hotels'
-              className={`${
-                pathname.includes('hotels') ? 'text-danger-500' : 'text-black'
-              }`}
-            >
-              Hoạt động & Vui chơi
-            </Link>
-          </NavbarItem>
-        </NavbarContent>
-        {/* <NavbarContent justify='end'>
+            Trang chủ
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            href='/search-flights'
+            className={`${
+              pathname.includes('flights') ? 'text-danger-500' : 'text-black'
+            }`}
+          >
+            Tạo lịch trình
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            href='/search-hotels'
+            className={`${
+              pathname.includes('hotels') ? 'text-danger-500' : 'text-black'
+            }`}
+          >
+            Hoạt động & Vui chơi
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      {/* <NavbarContent justify='end'>
           {!userInfo && (
             <>
               <NavbarItem className='hidden lg:flex'>
@@ -148,7 +125,6 @@ const Navbar = () => {
             </>
           )}
         </NavbarContent> */}
-      </div>
     </NextNavbar>
   )
 }

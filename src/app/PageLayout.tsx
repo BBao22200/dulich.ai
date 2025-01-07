@@ -17,11 +17,11 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => {
       {pathName.includes('/admin') ? (
         children
       ) : (
-        <div className=' relative flex flex-col' id='app-container'>
-          <main className=' flex flex-col  relative'>
+        <div className='relative flex flex-col' id='app-container'>
+          <main className='flex flex-col relative'>
             {isScraping && <ScrapingLoader />}
             <Navbar />
-            <section className=' h-full flex-1 '>{children}</section>
+            <section className='h-full flex-1'>{children}</section>
             <AuthModal
               isOpen={isOpen}
               onOpen={onOpen}
